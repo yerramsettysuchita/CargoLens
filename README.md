@@ -385,29 +385,29 @@ When a shipment hits customs hold at 2am, the right person must know immediately
 │                                                                    │
 │   API Routes (Edge / ISR)                                          │
 │   ────────────────────────                                         │
-│   /api/chat              ──►  Gemini 2.0 Flash   (Graph-RAG)      │
-│   /api/fx-rates          ──►  open.er-api.com    (ISR 1 h)        │
-│   /api/port-congestion   ──►  IMF PortWatch      (ISR 1 h)        │
+│   /api/chat              ──►  Gemini 2.0 Flash   (Graph-RAG)       │
+│   /api/fx-rates          ──►  open.er-api.com    (ISR 1 h)         │
+│   /api/port-congestion   ──►  IMF PortWatch      (ISR 1 h)         │
 │   /api/notify            ──►  Twilio             (SMS / WA)        │
-│   /api/document-analysis ──►  Gemini             (OCR + extract)  │
-│   /api/compliance-check  ──►  Gemini             (structured)     │
+│   /api/document-analysis ──►  Gemini             (OCR + extract)   │
+│   /api/compliance-check  ──►  Gemini             (structured)      │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
              ┌──────────────────────┼──────────────────────┐
              ▼                      ▼                      ▼
-    ┌─────────────────┐   ┌──────────────────┐   ┌───────────────┐
+    ┌─────────────────┐   ┌───────────────────┐   ┌───────────────┐
     │   Supabase      │   │  Gemini 2.0 Flash │   │    Twilio     │
     │   PostgreSQL    │   │  Graph-RAG copilot│   │  SMS/WhatsApp │
     │   Realtime WS   │   │  Document OCR     │   └───────────────┘
-    └─────────────────┘   └──────────────────┘
+    └─────────────────┘   └───────────────────┘
                                     │
                ┌────────────────────┼────────────────────┐
                ▼                    ▼                    ▼
-        ┌────────────┐   ┌────────────────────┐  ┌────────────────┐
+        ┌────────────┐   ┌─────────────────────┐  ┌────────────────┐
         │   GDELT    │   │   IMF PortWatch     │  │ open.er-api    │
         │  DOC API   │   │  ArcGIS AIS Vessel  │  │  FX Rates      │
         │  (free)    │   │  Data  (free)       │  │  (free)        │
-        └────────────┘   └────────────────────┘  └────────────────┘
+        └────────────┘   └─────────────────────┘  └────────────────┘
 ```
 
 <br/>
