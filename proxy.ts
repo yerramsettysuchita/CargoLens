@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED = ["/dashboard", "/shipments", "/chat", "/carbon", "/estimate", "/compare", "/suppliers", "/tariff", "/settings"];
+const PROTECTED = ["/dashboard", "/shipments", "/chat", "/carbon", "/compare", "/suppliers", "/settings"];
 
 // API routes and static assets — skip auth entirely
 const SKIP_PATTERNS = [

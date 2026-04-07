@@ -62,7 +62,7 @@ function AuthForm() {
       // Supabase may require email confirmation. Check session immediately.
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
-        router.replace(next);
+        window.location.href = next;
       } else {
         setConfirmSent(true);
         setLoading(false);
@@ -77,7 +77,7 @@ function AuthForm() {
         setLoading(false);
         return;
       }
-      router.push(next);
+      window.location.href = next;
     }
   }
 
